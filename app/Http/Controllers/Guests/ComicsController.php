@@ -14,16 +14,17 @@ class ComicsController extends Controller
     public function index()
     {
         $dcComics = Comics::all();
-        return view('dcComics.index', compact('dcComics'));
+        return view('comics.index', compact('dcComics'));
+        dd($dcComics);
     }
-
+    
     
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('dcComics.create');
+        return view('comics.dcComics.create');
     }
 
     /**
