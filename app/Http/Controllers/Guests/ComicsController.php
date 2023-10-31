@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Guests;
 
+use App\Models\Comics;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,20 +13,17 @@ class ComicsController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $dcComics = Comics::all();
+        return view('dcComics.index', compact('dcComics'));
     }
 
-    public function about()
-    {
-        return view('about');
-    }
-
+    
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('dcComics.create');
     }
 
     /**
@@ -33,15 +31,16 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comics = Comics::create($request->all());
+        return redirect()->route('comics.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Comics $dcComics)
     {
-        //
+        return view('dcComics.show', compact('dcComics'));
     }
 
     /**

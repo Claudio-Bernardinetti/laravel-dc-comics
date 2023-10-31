@@ -16,4 +16,6 @@ use App\Http\Controllers\Guests\ComicsController;
 Route::get('/', [ComicsController::class, 'index'])->name('home');
 Route::get('/about', [ComicsController::class, 'about'])->name('about');
 
+//Route::resource('Comics', ComicsController::class);
+
 
