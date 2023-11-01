@@ -1,29 +1,27 @@
 @extends('../layouts.app')
 
 @section('content')
-
-<div class="container">
+<div id="comics_index">
+  <div class="container">
     <div class="row">
-        @foreach ($comics as $comic)
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
-                    <div class="card-body">
-                        <h2 class="card-title">{{ $comic->title }}</h2>
-                        <p class="card-text">{{ $comic->description }}</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Price: {{ $comic->price }}</li>
-                        <li class="list-group-item">Series: {{ $comic->series }}</li>
-                        <li class="list-group-item">Sale Date: {{ $comic->sale_date }}</li>
-                        <li class="list-group-item">Type: {{ $comic->type }}</li>
-                        <li class="list-group-item">Artists: {{ implode(', ', json_decode($comic->artists, true)) }}</li>
-                        <li class="list-group-item">Writers: {{ implode(', ', json_decode($comic->writers, true)) }}</li>
-                    </ul>
-                </div>
+      @foreach ($comics as $comic)
+        <div class="card-body card_body col-xl-4 flex-wrap border border-black g-3 p-2">
+            <div class="card-header card_header">
+                <img class="card-img-top" src="{{ $comic->thumb }}"  height="500px" alt="{{ $comic->title }}">
+                {{-- <p class="card-text">{{ $comic->description }}</p> --}}
             </div>
-        @endforeach
+            <div class="card-text card_text">
+                <h4 class="card-title">{{ $comic->title }}</h4>
+                <p class="list-group-item">Price: {{ $comic->price }}</p>
+                <p class="list-group-item">Series: {{ $comic->series }}</p>
+                <p class="list-group-item">Sale Date: {{ $comic->sale_date }}</p>
+                <p class="list-group-item">Type: {{ $comic->type }}</p>
+                {{-- <p class="list-group-item">Artists: {{ implode(', ', json_decode($comic->artists, true)) }}</p>
+                <p class="list-group-item">Writers: {{ implode(', ', json_decode($comic->writers, true)) }}</p> --}}
+            </div>
+        </div>
+      @endforeach
     </div>
-</div>
-    
+  </div>
+</div>   
 @endsection

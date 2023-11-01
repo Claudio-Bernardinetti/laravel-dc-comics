@@ -1,1 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
+
+
+body {
+    background-color: whitesmoke;
+}
+
+#comics_index { 
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 1rem;
+    }
+    
+    .card_body {
+      background-color: white;
+      flex-basis: 25%;
+      margin: 0 5px 5px 0;
+      border-radius: 15px;
+    }
+
+
+
+}
