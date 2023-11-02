@@ -26,7 +26,7 @@
     </header>
 
     <main class="min-vh-100">
-        @include('admin.comics.index')
+        @yield('content')
     </main>
 
     <footer class="bg-dark text-white py-4 text-center">

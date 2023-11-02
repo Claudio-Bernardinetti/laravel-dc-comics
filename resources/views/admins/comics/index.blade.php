@@ -1,10 +1,13 @@
+@extends('layouts.admins')
+
+@section('content')
 
 
 <div id="comics_index">
   <div class="container">
     <div class="row">
       @foreach ($comics as $comic)
-        <div class="card-body card_body col-xl-4 flex-wrap border border-black g-3">
+        <div class="card-body card_body col-12 col-md-6 col-lg-6 col-xl-3  flex-wrap border border-black m-3 ">
             <div class="card-header card_header">
                 <img class="card-img-top" src="{{ $comic->thumb }}"  height="500px" alt="{{ $comic->title }}">
                 {{-- <p class="card-text">{{ $comic->description }}</p> --}}
@@ -24,3 +27,4 @@
   </div>
 </div>   
 
+@endsection
