@@ -7,7 +7,7 @@
 
     <h1 class="py-4">Edit Comic number: {{$comics->id}}</h1>
 
-    <form action="{{route('comics.update', $lightsaber)}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('comics.update', $comics)}}" method="POST" enctype="multipart/form-data">
 
         <!-- // Attention to Cross site request forgery attacks -->
         @csrf

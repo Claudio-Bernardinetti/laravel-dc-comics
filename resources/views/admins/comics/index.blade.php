@@ -18,6 +18,8 @@
                 <p class="list-group-item">Series: {{ $comic->series }}</p>
                 <p class="list-group-item">Sale Date: {{ $comic->sale_date }}</p>
                 <p class="list-group-item">Type: {{ $comic->type }}</p>
+                <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">View</a>
+                <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary">Edit</a>
                 {{-- <p class="list-group-item">Artists: {{ implode(', ', json_decode($comic->artists, true)) }}</p>
                 <p class="list-group-item">Writers: {{ implode(', ', json_decode($comic->writers, true)) }}</p> --}}
             </div>
