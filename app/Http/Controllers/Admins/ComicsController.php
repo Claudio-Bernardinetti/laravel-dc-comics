@@ -14,8 +14,8 @@ class ComicsController extends Controller
      */
     public function index()
     {
-        $comics = Comics::all();
-        return view('admins.comics.index', compact('comics'));
+        $comic = Comics::all();
+        return view('admins.comics.index', compact('comic'));
         
     }
     
@@ -31,6 +31,8 @@ class ComicsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
+     
     public function store(Request $request)
     {
         //dd($request->all());
@@ -38,7 +40,7 @@ class ComicsController extends Controller
         $data = $request->all();
         //$file_path = null;
         if ($request->has('thumb')) {
-            $file_path =  Storage::put('comics', $request->thumb);
+            $file_path =  Storage::put('comic', $request->thumb);
             $data['thumb'] = $file_path;
         }
         //dd($file_path);
@@ -54,30 +56,30 @@ class ComicsController extends Controller
             */
         //With mass assignment
         //dd($data);
-        $comics = Comics::create($data);
+        $comic = Comics::create($data);
 
         // LightSaber::fill() // alternativa
 
 
         // redirectthe user to a get route, follow the pattern ->  POST/REDIRECT/GET
         // return redirect()->route('lightsabers.index')
-        return to_route('comics.show', $comics); // new function to_route() laravel 9
+        return to_route('comics.show', $comic); // new function to_route() laravel 9
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Comics $comics)
+    public function show(Comics $comic)
     {
-        return view('admins.comics.show', compact('comics'));
+        return view('admins.comics.show', compact('comic'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Comics $comics)
+    public function edit(Comics $comic)
     {
-        return view('admins.comics.edit', compact('comics'));
+        return view('admins.comics.edit', compact('comic'));
     }
 
     /**

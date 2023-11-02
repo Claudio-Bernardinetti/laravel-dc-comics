@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Comics extends Model
 {
     use HasFactory;
+
+    //protected $table = "light_sabers";
+
+    protected $fillable = ['name', 'thumb', 'description', 'price'];
+
 }

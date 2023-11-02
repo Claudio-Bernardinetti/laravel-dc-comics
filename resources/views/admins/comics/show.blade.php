@@ -14,7 +14,7 @@
 <div class="container d-flex gap-2">
 
     {{-- <img width="600" class="img-fluid shadow-lg" src="{{$comics->thumb}}" alt=""> --}}
-    <img src="{{ asset('storage/' . $comics->thumb) }}" alt="">
+    <img src="{{ asset('storage/' . $comic->thumb) }}" alt="">
     <div class="text">
         <strong class="text-muted">Description</strong>
         <p class="col-md-8 fs-4">{{$comic->description}}</p>
