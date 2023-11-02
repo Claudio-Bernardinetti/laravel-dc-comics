@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Guests;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Comics;
 use App\Http\Controllers\Controller;
@@ -14,7 +14,7 @@ class ComicsController extends Controller
     public function index()
     {
         $comics = Comics::all();
-        return view('comics.index', compact('comics'));
+        return view('admin.comics.index', compact('comics'));
         
     }
     
@@ -24,8 +24,7 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        return view('comics.index.create');
-        
+        return view('admin.comics.index.create');
     }
 
     /**

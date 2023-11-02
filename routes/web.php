@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Guests\ComicsController;
+use App\Http\Controllers\Admin\ComicsController;
 use App\Http\Controllers\Guests\PageController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,11 +21,11 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 
 //Route::get('/comics.dcComics', [ComicsController::class, 'Comics'])->name('comics.dcComics');
 
-Route::get('/comics', [ComicsController::class, 'index'])->name('comics.index');
+//Route::get('/comics', [ComicsController::class, 'index'])->name('comics.index');
 
 // Route::get('/comics', function () {
 //     return view('comics.index');
 // });
-Route::resource('guests/comics', ComicsController::class);
+Route::resource('admins/comics', ComicsController::class);
 
 
