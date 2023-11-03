@@ -5,8 +5,7 @@
         <a class="nav-link" href="{{route('about')}}">About</a>
         <a class="btn btn-info btn-sm ms-auto rounded-pill" href="{{route('comics.index')}}">Admin</a>
     </nav>
-</header>
-{{-- <header id="app_header">
+</header> <header id="app_header">
 
     <div class="nav_img">
     <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="">
@@ -35,5 +34,5 @@
     </form>
 
   
-</header> --}}
+</header>
 

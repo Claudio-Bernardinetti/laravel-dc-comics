@@ -5,7 +5,7 @@
 
 <div class="container">
 
-    <h1 class="py-4">Edit Comic number: {{$comic->name}}</h1>
+    <h1 class="py-4">Edit Comic number: {{$comic->id}}</h1>
 
     <form action="{{route('comics.update', $comic)}}" method="POST" enctype="multipart/form-data">
 

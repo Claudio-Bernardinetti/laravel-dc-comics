@@ -14,11 +14,10 @@ class ComicsController extends Controller
      */
     public function index()
     {
-        $comic = Comics::all();
-        return view('admins.comics.index', compact('comic'));
+        $comics = Comics::all();
+        return view('admins.comics.index', compact('comics'));
         
     }
-    
     
     /**
      * Show the form for creating a new resource.
@@ -40,20 +39,20 @@ class ComicsController extends Controller
         $data = $request->all();
         //$file_path = null;
         if ($request->has('thumb')) {
-            $file_path =  Storage::put('comic', $request->thumb);
+            $file_path =  Storage::put('comics_img', $request->thumb);
             $data['thumb'] = $file_path;
         }
         // dd($file_path);
 
 
         // Add a new recorin the the db
-        /* Without mass assignment of fields
-        $saber = new LightSaber();
+        //Without mass assignment of fields
+        /* $saber = new LightSaber();
         $saber->name = $request->name;
         $saber->price = $request->price;
         $saber->cover_image = $file_path;
-        $saber->save();
-            */
+        $saber->save(); */
+           
         //With mass assignment
         //dd($data);
         $comic = Comics::create($data);
@@ -85,9 +84,20 @@ class ComicsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comics $comic)
     {
-        //
+        $Comics = $request->all();
+        
+        if ($request->has('thumb') && $comic->thumb) {
+           Storage::delete($comic->thumb);
+           
+
+           $newImageFile = $request->thumb;
+           $path = Storage::put('comics_img', $newImageFile);
+           $data['thumb'] = $path;
+        }
+        $comic->update($Comics);
+        return to_route('comics.show', $comic);   
     }
 
     /**
