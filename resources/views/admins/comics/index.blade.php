@@ -20,19 +20,25 @@
                 <p class="list-group-item">Type: {{ $comic->type }}</p>
                 <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">View</a>
                 <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary">Edit</a>
+                <a href="{{route('comics.destroy', $comic->id)}}" class="btn btn-danger">Delete</a>
                 
                 {{-- <p class="list-group-item">Artists: {{ implode(', ', json_decode($comic->artists, true)) }}</p>
                 <p class="list-group-item">Writers: {{ implode(', ', json_decode($comic->writers, true)) }}</p> --}}
             </div>
         </div>
         @empty
-            <div class="col-12">
-              <td>Oops! No comics yet!</td>
-            </div>
-        
-      @endforelse
-    </div>
+          <div class="col-12">
+            <td>Oops! No comics yet!</td>
+          </div>
+          
+          @endforelse
+        </div>
   </div>
 </div>   
 
 @endsection
+{{-- <form action="{{route ('comics.destroy', $caomic)}}" method='post'>
+  @csrf
+  @method('DELETE')
+  <button type="submit" class="btn btn-danger">Delete</button>
+</form> --}}
