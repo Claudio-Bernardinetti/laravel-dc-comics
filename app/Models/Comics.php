@@ -12,7 +12,7 @@ class Comics extends Model
 
     //protected $table = "light_sabers";
 
-    protected $fillable = ['id', 'thumb', 'description', 'price'];
+    protected $fillable = ['title', 'thumb', 'description', 'price'];
 
     /* protected function thumb(): Attribute
     {

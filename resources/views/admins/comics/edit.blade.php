@@ -14,7 +14,7 @@
         @method('PUT')
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="Comics img" value="{{$comic->name}}">
+            <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Comics img" value="{{$comic->title}}">
             <small id="nameHelper" class="form-text text-muted">Type the name here</small>
         </div>
 

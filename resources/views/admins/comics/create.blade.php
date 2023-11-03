@@ -15,7 +15,7 @@
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="Acolyte Eco Battle staff">
+            <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Acolyte Eco Battle staff">
             <small id="nameHelper" class="form-text text-muted">Type the name here</small>
         </div>
 

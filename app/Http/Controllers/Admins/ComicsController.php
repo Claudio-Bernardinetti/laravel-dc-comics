@@ -42,7 +42,7 @@ class ComicsController extends Controller
             $file_path =  Storage::put('comics_img', $request->thumb);
             $data['thumb'] = $file_path;
         }
-        // dd($file_path);
+         dd($file_path);
 
 
         // Add a new recorin the the db
@@ -70,6 +70,7 @@ class ComicsController extends Controller
      */
     public function show(Comics $comic)
     {
+        //dd($comic);
         return view('admins.comics.show', compact('comic'));
     }
 
@@ -78,7 +79,9 @@ class ComicsController extends Controller
      */
     public function edit(Comics $comic)
     {
-        return view('admins.comics.edit', compact('comic'));
+        
+
+        return view('admins.comics.edit',['comic'=>$comic]);
     }
 
     /**
@@ -89,9 +92,13 @@ class ComicsController extends Controller
         $Comics = $request->all();
         
         if ($request->has('thumb') && $comic->thumb) {
+
+            //siccome le tue immagini sono state precaricate con il seeder
+            //l'immagine non si trova fisicamente sul tuo computer ma in internet
+            //quindi tutte le immagini già caricate con il seeder non possono essere cancellate qui
+            //todo: fai la create
            Storage::delete($comic->thumb);
            
-
            $newImageFile = $request->thumb;
            $path = Storage::put('comics_img', $newImageFile);
            $data['thumb'] = $path;

@@ -1,0 +1,35 @@
+@use 'variables' as *;
+
+#app_footer_top {
+  background-image: url(../img/footer-bg.jpg);
+  position: relative; 
+ 
+  
+  div{
+    color: $comics_secondary;
+  }
+
+  .text{
+
+    div {
+    padding-right: 1.5rem;
+    font-weight: bold;
+    font-size: 110%;
+    }
+
+    ul {
+        list-style-type: none;
+        color: $comics_light ;
+        margin-left: -32px;
+        padding-top: 1rem;
+        font-weight: normal;
+        font-size: 70%;
+    }
+
+  }
+    .img { 
+       
+       margin-top: -8%;
+       margin-bottom: -8%;
+    }
+}

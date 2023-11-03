@@ -26,7 +26,8 @@
     </main>
 
     <footer>
-        @include('partials.footer')
+        @include('partials.footerTop')
+        @include('partials.footerBottom')
     </footer>
     
 </body>

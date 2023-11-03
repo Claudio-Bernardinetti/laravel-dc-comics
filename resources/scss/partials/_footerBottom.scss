@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+#app_footer_bottom {
+  background-color: $comics_dark_secondary;
+  width: 100%;
+  position: absolute;
+  bottom: 1;
+
+  button{
+    background: $comics_dark_secondary;
+    color: $comics_secondary;
+    padding-bottom: 1rem;
+    border: 3px solid $comics_primary ;
+  }
+
+  .footer_right {
+    padding: 1rem;
+    div {
+        padding: 0.5rem;
+      img {
+          width: 80%;
+      }
+    }
+  }
+  .text {
+    color: $comics_primary;
+    font-weight: bold;
+    font-size: 110%;
+  }
+
+}
