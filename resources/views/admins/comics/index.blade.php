@@ -6,7 +6,7 @@
 <div id="comics_index">
   <div class="container">
     <div class="row">
-      @foreach ($comic as $comi)
+      @forelse ($comic as $comi)
         <div class="card-body card_body col-12 col-md-6 col-lg-6 col-xl-3  flex-wrap border border-black m-3 ">
             <div class="card-header card_header">
                 <img class="card-img-top" src="{{ $comi->thumb }}"  height="500px" alt="{{ $comi->title }}">
@@ -20,11 +20,17 @@
                 <p class="list-group-item">Type: {{ $comi->type }}</p>
                 <a href="{{route('comics.show', $comi->id)}}" class="btn btn-primary">View</a>
                 <a href="{{route('comics.edit', $comi->id)}}" class="btn btn-secondary">Edit</a>
+                
                 {{-- <p class="list-group-item">Artists: {{ implode(', ', json_decode($comic->artists, true)) }}</p>
                 <p class="list-group-item">Writers: {{ implode(', ', json_decode($comic->writers, true)) }}</p> --}}
             </div>
         </div>
-      @endforeach
+        @empty
+            <div class="col-12">
+              <td>Oops! No comics yet!</td>
+            </div>
+        
+      @endforelse
     </div>
   </div>
 </div>   

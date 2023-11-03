@@ -3,8 +3,11 @@
 
 @section('content')
 
+<button type="submit" class="btn btn-primary">
+    Save
+</button>
 <div class="container">
-
+    
 
     <form action="{{route('comics.store')}}" method="POST" enctype="multipart/form-data">
 
@@ -30,9 +33,6 @@
         </div>
 
 
-        <button type="submit" class="btn btn-primary">
-            Save
-        </button>
 
 
     </form>

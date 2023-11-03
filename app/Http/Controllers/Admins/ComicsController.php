@@ -43,7 +43,7 @@ class ComicsController extends Controller
             $file_path =  Storage::put('comic', $request->thumb);
             $data['thumb'] = $file_path;
         }
-        //dd($file_path);
+        // dd($file_path);
 
 
         // Add a new recorin the the db

@@ -1,0 +1,49 @@
+@use 'variables' as *;
+
+#app_header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $comics_secondary;
+    font-weight: bold;
+   
+  
+    .nav_img {
+       padding: 1rem;
+       img {
+         width: 60px;
+         height: 60px;
+       }
+    }
+    .nav_tags  {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      
+      .active {
+        
+        border-bottom: 4px solid $comics_primary;
+        
+        a {
+        color: $comics_primary;
+        }
+  
+      }
+  
+    }
+    .nav_tags div {
+      margin-left: 1rem;
+      padding-top: 2.2rem;
+      padding-bottom: 2.2rem;
+  
+    }
+  
+    a {
+      text-decoration: none;
+      color: $comics_dark;
+    }
+  
+  }
+
+
