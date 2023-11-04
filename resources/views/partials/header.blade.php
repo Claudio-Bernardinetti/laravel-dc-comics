@@ -1,11 +1,22 @@
-<header>
+{{-- <header>
     <nav class="nav justify-content-center navbar-light bg-light shadow-lg align-items-center py-3">
-        <a class="nav-link active" href="{{route('home')}}" aria-current="page">Home</a>
+        <a class="nav-link active" href="{{route('home')}}" aria-current="page">Home</a> --}}
         {{-- <a class="nav-link" href="{{route('guests.lightsabers')}}">Sabers</a> --}}
-        <a class="nav-link" href="{{route('about')}}">About</a>
+        {{-- <a class="nav-link" href="{{route('about')}}">About</a>
         <a class="btn btn-info btn-sm ms-auto rounded-pill" href="{{route('comics.index')}}">Admin</a>
     </nav>
-</header> <header id="app_header">
+</header>  --}}
+<header>
+    <nav class="nav justify-content-end navbar-light bg-primary shadow-lg align-items-center ">
+        <a class="nav-link active text-black" href="{{route('home')}}" aria-current="page">Home</a>
+        <a class="nav-link text-black" href="{{route('about')}}">About</a> 
+        <a class="nav-link active text-black" href="{{route('comics')}}" aria-current="page">Dashboard</a>
+        <a class="nav-link text-black" href="{{route('comics.index')}}">Comics</a>
+        <a class="btn btn-info btn-sm  rounded-pill" href="{{route('comics.index')}}">Admin</a>
+    </nav>
+   
+</header>
+<header id="app_header">
 
     <div class="nav_img">
     <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="">

@@ -19,10 +19,12 @@
 <body>
     <header>
         @include('partials.header')
+        @include('partials.jumbotron')
     </header>
 
     <main>
         @yield('content')
+        @include('partials.blue')
     </main>
 
     <footer>

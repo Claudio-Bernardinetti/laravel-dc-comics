@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+#app_jumbotron {
+    background-image: url(../img/jumbotron.jpg);
+    height: 400px;
+    overflow: hidden;
+}
+
+button {
+    background-color: $comics_primary;
+    color: $comics_secondary;
+    position: absolute;
+    top: 480px;
+    left: 9%;
+    font-size: 120%;
+}

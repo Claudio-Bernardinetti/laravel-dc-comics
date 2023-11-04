@@ -18,11 +18,12 @@
 <body>
 
     <header>
-        <nav class="nav justify-content-center navbar-light bg-light shadow-lg align-items-center py-3">
-            <a class="nav-link active" href="#" aria-current="page">Dashboard</a>
-            <a class="nav-link" href="{{route('comics.index')}}">Comics</a>
+        {{-- <nav class="nav justify-content-center navbar-light bg-primary shadow-lg align-items-center py-1">
+            <a class="nav-link active text-black" href="#" aria-current="page">Dashboard</a>
+            <a class="nav-link text-black" href="{{route('comics.index')}}">Comics</a>
             <a class="btn btn-info btn-sm ms-auto rounded-pill" href="{{route('home')}}">Home</a>
-        </nav>
+        </nav> --}}
+        @include('partials.header')
     </header>
 
     <main class="min-vh-100">

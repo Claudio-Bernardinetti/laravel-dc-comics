@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Guests;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comics;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -21,52 +22,20 @@ class PageController extends Controller
     }
 
     
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    
+    public function comics()
     {
-        //
+        return view('comics', ['comics' => Comics::all()]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function showComics(Comics $comics)
     {
-        //
+       return view('show_comics', compact('comics'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    
 }
 

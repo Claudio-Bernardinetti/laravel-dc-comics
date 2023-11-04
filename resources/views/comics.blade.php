@@ -9,12 +9,12 @@
             @forelse ($comics as $comic)
             <div class="col">
                 <div class="card">
-                    <!-- <img class="card-img-top" src="{{$saber->cover_image}}" alt=""> -->
+                    <img class="card-img-top" src="{{$comic->thumb}}" alt=""> 
                     <img class="card-img-top" src="{{ asset('storage/' . $comic->thumb) }}" alt="">
 
                     <div class="card-body">
-                        <h3>{{$comics->name}}</h3>
-                        <a href="{{route('admins.comics.show', $comic->id)}}">View</a>
+                        <h3>{{$comic->title}}</h3>
+                        <a href="{{route('guests.comics.show', $comic->id)}}">View</a>
                     </div>
                 </div>
             </div>
