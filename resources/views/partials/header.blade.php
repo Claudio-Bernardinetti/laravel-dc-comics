@@ -8,11 +8,11 @@
 </header>  --}}
 <header>
     <nav class="nav justify-content-end navbar-light bg-primary shadow-lg align-items-center ">
-        <a class="nav-link active text-black" href="{{route('home')}}" aria-current="page">Home</a>
-        <a class="nav-link text-black" href="{{route('about')}}">About</a> 
-        <a class="nav-link active text-black" href="{{route('comics')}}" aria-current="page">Dashboard</a>
-        <a class="nav-link text-black" href="{{route('comics.index')}}">Comics</a>
-        <a class="btn btn-info btn-sm  rounded-pill" href="{{route('comics.index')}}">Admin</a>
+        {{-- <a class="nav-link active text-black" href="{{route('home')}}" aria-current="page">Home</a> --}}
+        {{-- <a class="nav-link text-black" href="{{route('about')}}">About</a>  --}}
+        <a class="nav-link active text-black" href="{{route('comics')}}" aria-current="page">Guests</a>
+        {{-- <a class="nav-link text-black" href="{{route('comics.index')}}">Comics</a> --}}
+        <a class="btn btn-info btn-sm  rounded-pill" href="{{route('comics.index')}}">Admins</a>
     </nav>
    
 </header>
@@ -23,7 +23,7 @@
     </div>
     <div class="nav_tags">
         <div><a href="#">CHARACTERS</a></div>
-        <div class="active"><a  href="#">COMICS</a></div>
+        <div class="active"><a  href="{{route('comics')}}">COMICS</a></div>
         <div><a href="#">MOVIES</a></div>
         <div><a href="#">TV</a></div>
         <div><a href="#">GAMES</a></div>

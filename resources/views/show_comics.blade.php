@@ -2,29 +2,42 @@
 
 @section('content')
 
-<div class="p-5 mb-4 bg-dark text-white rounded-0">
-    <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">{{$comics->title}}</h1>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos deserunt doloribus laudantium, quidem assumenda maiores labore, quisquam id consequatur ipsam nisi eaque error magni inventore sapiente totam, illo itaque aspernatur?
-        </p>
-    </div>
+<img class="img-fluid img_jumbo" src="{{$comic->thumb}}" width="20%" alt="">
+
+<div class="blue_line">
+    
 </div>
 
-<div class="container d-flex gap-2">
-
-    <img width="600" class="img-fluid shadow-lg" src="{{$comics->thumb}}" alt="">
-
+<div class="container show_comics d-flex">
     <div class="text">
-        <strong class="text-muted">Description</strong>
-        <p class="col-md-8 fs-4">{{$comics->description}}</p>
-        <div class="display-3"> ${{$comics->price}}</div>
+        <div>
+            <h1 class="">{{$comic->title}}</h1>
+        </div>
 
-        <a class="btn btn-success mt-4" href="#" role="button">Buy Now</a>
+        <div class="col-md-10 d-flex justify-content-around align-items-center text-muted bg-success pt-1">
+            <p>US Price: {{$comic->price}}</p>
+            <p>AVAILABLE</p>
+            <p>Check Availability</p>
+        </div>
+
+        <div>
+            <p class="col-md-10 ">{{$comic->description}}</p>
+        </div>
+    
     </div>
-
-
-
+    <div>
+      <strong class="text-muted">ADVERTISEMENT</strong>
+      <img src="{{ Vite::asset('resources/img/adv.jpg') }}" alt="">
+    </div>
+    {{-- <img src="{{ asset('storage/' . $thumb->path) }}" alt="{{ $comic->thumb }}"> --}}
+</div>
+<div class="info d-flex">
+    <div class="col-6">Talent
+        <div>{{ implode(', ', json_decode($comic->artists, true)) }}</div>
+    </div>
+    <div class="col-6">Specs
+        <div>{{$comic->series}}</div>
+    </div>
 
 </div>
 

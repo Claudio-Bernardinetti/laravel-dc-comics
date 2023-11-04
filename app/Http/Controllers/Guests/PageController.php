@@ -31,9 +31,10 @@ class PageController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function showComics(Comics $comics)
+    public function showComics(Comics $comic)
     {
-       return view('show_comics', compact('comics'));
+        $title = $comic->title;
+        return view('show_comics', compact('comic', 'title'));
     }
 
     

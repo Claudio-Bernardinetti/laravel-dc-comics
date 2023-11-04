@@ -2,8 +2,9 @@
 
 #app_footer_top {
   background-image: url(../img/footer-bg.jpg);
-  position: relative; 
- 
+  position: relative;
+  padding-left: 8%;
+  
   
   div{
     color: $comics_secondary;
@@ -28,7 +29,6 @@
 
   }
     .img { 
-       
        margin-top: -8%;
        margin-bottom: -8%;
     }

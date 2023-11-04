@@ -24,7 +24,7 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        return view('admins.comics.index.create');
+        return view('admins.comics.create');
     }
 
     /**
@@ -32,38 +32,22 @@ class ComicsController extends Controller
      */
 
      
-    public function store(Request $request)
-    {
-        //dd($request->all());
-
-        $data = $request->all();
-        //$file_path = null;
-        if ($request->has('thumb')) {
-            $file_path =  Storage::put('comics_img', $request->thumb);
-            $data['thumb'] = $file_path;
-        }
-         dd($file_path);
-
-
-        // Add a new recorin the the db
-        //Without mass assignment of fields
-        /* $saber = new LightSaber();
-        $saber->name = $request->name;
-        $saber->price = $request->price;
-        $saber->cover_image = $file_path;
-        $saber->save(); */
-           
-        //With mass assignment
-        //dd($data);
-        $comic = Comics::create($data);
-
-        // LightSaber::fill() // alternativa
-
-
-        // redirectthe user to a get route, follow the pattern ->  POST/REDIRECT/GET
-        // return redirect()->route('lightsabers.index')
-        return to_route('comics.show', $comic); // new function to_route() laravel 9
-    }
+     public function store(Request $request)
+     {
+         $data = $request->all();
+ 
+         if ($request->has('thumb')) {
+             $file_path = Storage::put('comics_img', $request->thumb);
+             $data['thumb'] = $file_path;
+         }
+ 
+         //dd($file_path);
+         //dd($data);
+ 
+         Comics::create($data);
+ 
+         return to_route('comics.index')->with('message', 'Item successfully created!');;
+     }
 
     /**
      * Display the specified resource.
@@ -81,7 +65,7 @@ class ComicsController extends Controller
     {
         
 
-        return view('admins.comics.edit',['comic'=>$comic]);
+        return view('admins.comics.edit', compact('comic'));
     }
 
     /**
@@ -89,22 +73,20 @@ class ComicsController extends Controller
      */
     public function update(Request $request, Comics $comic)
     {
-        $Comics = $request->all();
-        
-        if ($request->has('thumb') && $comic->thumb) {
 
-            //siccome le tue immagini sono state precaricate con il seeder
-            //l'immagine non si trova fisicamente sul tuo computer ma in internet
-            //quindi tutte le immagini già caricate con il seeder non possono essere cancellate qui
-            //todo: fai la create
-           Storage::delete($comic->thumb);
-           
-           $newImageFile = $request->thumb;
-           $path = Storage::put('comics_img', $newImageFile);
-           $data['thumb'] = $path;
+        $data = $request->all();
+
+        if ($request->has('thumb') && $comic->thumb) {
+            Storage::delete($comic->thumb);
+            $file_path = Storage::put('comics_img', $request->thumb);
+            $data['thumb'] = $file_path;
         }
-        $comic->update($Comics);
-        return to_route('comics.show', $comic);   
+
+        //dd($file_path);
+        //dd($data);
+
+        $comic->update($data);
+        return to_route('comics.index')->with('message', 'Item successfully updated!');;
     }
 
     /**
@@ -112,8 +94,16 @@ class ComicsController extends Controller
      */
     public function destroy(Comics $comic)
     {
+
+        if (!is_null($comic->thumb)) {
+            Storage::delete($comic->thumb);
+        }
+
         $comic->delete();
-        return to_route('comics.index');
+        return to_route('comics.index')->with('message', 'Item successfully deleted!');
     }
 }
 
+
+
+    

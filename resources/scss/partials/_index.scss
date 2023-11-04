@@ -8,11 +8,15 @@
       justify-content: center;
       padding-top: 1rem;
     }
+
+    .card_header {
+      img {
+        width: 100px;
+      }
+    }
     
     .card_body {
-      background-color: blue;
-      // flex-basis: 25%;
-      // margin: 0 5px 5px 0;
+      width: 300px;
     }
 
 }

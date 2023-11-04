@@ -22,9 +22,8 @@
         @include('partials.jumbotron')
     </header>
 
-    <main>
+    <main class="my-0">
         @yield('content')
-        @include('partials.blue')
     </main>
 
     <footer>

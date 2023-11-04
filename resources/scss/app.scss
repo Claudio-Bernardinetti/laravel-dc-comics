@@ -1,9 +1,12 @@
 
 @use '~bootstrap/scss/bootstrap';
+@use 'partials/index' as *;
+@use 'partials/comics' as *;
+@use 'partials/show_comics' as *;
 @use 'partials/variables' as *;
 @use 'partials/header' as *;
 @use 'partials/footerTop' as *;
 @use 'partials/footerBottom' as *;
 @use 'partials/jumbotron' as *;
-@use 'partials/blue' as *;
+
 
