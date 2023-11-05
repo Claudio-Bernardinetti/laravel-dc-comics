@@ -31,7 +31,7 @@
     </main>
 
     <footer class="bg-dark text-white py-4 text-center">
-        <p>
+        <p class="p-5">
             Copyright &copy; 2023 Claudio
         </p>
     </footer>

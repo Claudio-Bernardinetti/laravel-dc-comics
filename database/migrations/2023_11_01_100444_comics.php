@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100);
+            $table->string('title', 110);
             $table->text('description')->nullable();
             $table->text('thumb')->nullable();
             $table->string('price')->nullable();
@@ -33,7 +33,7 @@ return new class extends Migration
     {
         Schema::dropIfExists('comics', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 50);
+            $table->string('title', 100);
             $table->text('description')->nullable();
             $table->string('thumb')->nullable();
             $table->string('price')->nullable();

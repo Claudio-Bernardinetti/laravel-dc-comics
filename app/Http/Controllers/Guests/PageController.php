@@ -13,7 +13,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view('comics');
+        return view('comics.comics');
     }
 
     public function about()

@@ -3,9 +3,9 @@
 
 @section('content')
 
-<button type="submit" class="btn btn-primary">
+{{-- <button type="submit" class="btn btn-primary">
     Save
-</button>
+</button> --}}
 <div class="container">
     
 
@@ -31,7 +31,7 @@
             <input type="file" class="form-control" name="thumb" id="thumb" placeholder="" aria-describedby="cover_image_helper">
             <div id="cover_image_helper" class="form-text">Upload an image for the current product</div>
         </div>
-        <div class="col-12">
+        <div class="col-12 mb-3">
             <button type="submit" class="btn btn-primary">Create</button>
             <a href="{{route('comics.index')}}" class="btn btn-light">Cancel</a>
         </div>

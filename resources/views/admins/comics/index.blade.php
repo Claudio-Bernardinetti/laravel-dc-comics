@@ -6,8 +6,8 @@
 <div id="comics_index">
   <div class="container">
     <div class="row">
+      <a href="{{route('comics.create')}}" class="btn btn-secondary">Edit</a>
       @forelse ($comics as $comic)
-      <a href="{{route('comics.create', $comic->id)}}" class="btn btn-secondary">Edit</a>
         <div class="card-body card_body col-12 col-md-6 col-lg-6 col-xl-4  flex-wrap border border-black m-3 ">
             <div class="card-header card_header">
                 <img class="card-img-top" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">

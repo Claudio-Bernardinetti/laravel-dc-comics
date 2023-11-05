@@ -18,7 +18,7 @@
         <div class="display-3">{{$comic->price}}</div>
 
         <a class="btn btn-success mt-4" href="#" role="button">Buy Now</a>
-        <a class="btn btn-primary mt-4" href="{{route('comics.index')}}" role="button">Go Back</a>
+        <a class="btn btn-primary mt-4" href="{{route('comics.index', $comic->id)}}" role="button">Go Back</a>
     </div>
 
 
