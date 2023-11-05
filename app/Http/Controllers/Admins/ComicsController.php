@@ -38,15 +38,17 @@ class ComicsController extends Controller
  
          if ($request->has('thumb')) {
              $file_path = Storage::put('comics_img', $request->thumb);
+             
              $data['thumb'] = $file_path;
          }
  
          //dd($file_path);
          //dd($data);
  
-         Comics::create($data);
+         $comic = Comics::create($data);
+         
  
-         return to_route('comics.index')->with('message', 'Item successfully created!');;
+         return to_route('comics.index', $comic)->with('message', 'Item successfully created!');;
      }
 
     /**
@@ -86,7 +88,7 @@ class ComicsController extends Controller
         //dd($data);
 
         $comic->update($data);
-        return to_route('comics.index')->with('message', 'Item successfully updated!');;
+        return to_route('comics.index')->with('message', 'Item successfully updated!');
     }
 
     /**

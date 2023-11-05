@@ -27,7 +27,7 @@
 
         <div class="d-flex gap-3">
             <div>
-                <img width="200" src="{{asset('storage/' . $comic->thumb)}}" alt="">
+                <img width="200" src="{{asset('storage/app/public/comics_img' . $comic->thumb)}}" alt="">
             </div>
             <div class="mb-3">
                 <label for="cover_image" class="form-label">Update Cover Image</label>
