@@ -34,18 +34,24 @@ class ComicsController extends Controller
      
      public function store(Request $request)
      {
-         $data = $request->all();
+        $val_data = $request->validate([
+            'title' => 'required|min:3|max:50',
+            'price' => 'nullable',
+            'thumb' => 'nullable|image|max:600'
+
+        ]);
+         /* $data = $request->all(); */
  
          if ($request->has('thumb')) {
              $file_path = Storage::put('comics_img', $request->thumb);
              
-             $data['thumb'] = $file_path;
+             $val_data['thumb'] = $file_path;
          }
  
          //dd($file_path);
          //dd($data);
  
-         $comic = Comics::create($data);
+         $comic = Comics::create($val_data);
          
  
          return to_route('comics.index', $comic)->with('message', 'Item successfully created!');;
@@ -76,18 +82,25 @@ class ComicsController extends Controller
     public function update(Request $request, Comics $comic)
     {
 
-        $data = $request->all();
+        $val_data = $request->validate([
+            'title' => 'required|min:3|max:50',
+            'price' => 'nullable',
+            'thumb' => 'nullable|image|max:600'
+
+        ]);
+
+        /* $data = $request->all(); */
 
         if ($request->has('thumb') && $comic->thumb) {
             Storage::delete($comic->thumb);
             $file_path = Storage::put('comics_img', $request->thumb);
-            $data['thumb'] = $file_path;
+            $val_data['thumb'] = $file_path;
         }
 
         //dd($file_path);
         //dd($data);
 
-        $comic->update($data);
+        $comic->update($val_data);
         return to_route('comics.index')->with('message', 'Item successfully updated!');
     }
 
