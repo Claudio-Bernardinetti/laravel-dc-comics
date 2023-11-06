@@ -6,7 +6,8 @@
 <div id="comics_index">
   <div class="container">
     <div class="row">
-      <a href="{{route('comics.create')}}" class="btn btn-secondary">Edit</a>
+      <a class="btn btn-primary" href="{{route('comics.create')}}">Add Comics</a>
+      
       @forelse ($comics as $comic)
         <div class="card-body card_body col-12 col-md-6 col-lg-6 col-xl-4  flex-wrap border border-black m-3 ">
             <div class="card-header card_header">
@@ -21,10 +22,11 @@
                 <p class="list-group-item">Type: {{ $comic->type }}</p>
                 <div class="d-flex">
                   <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary mx-2">View</a>
+                  <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary">Edit</a>
                   <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal_{{$comic->id}}">
+                    <button type="button " class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal_{{$comic->id}}">
                       Delete
                     </button>
                     <div class="modal fade" id="exampleModal_{{$comic->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
