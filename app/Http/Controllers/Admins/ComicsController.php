@@ -102,8 +102,8 @@ class ComicsController extends Controller
             $val_data['thumb'] = $file_path;
         }
 
-        //dd($file_path);
-        //dd($data);
+        /* dd($file_path); */
+        //dd($val_data);
 
         $comic->update($val_data);
         return to_route('comics.index')->with('message', 'Item successfully updated!');

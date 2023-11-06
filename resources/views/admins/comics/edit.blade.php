@@ -25,7 +25,7 @@
 
         <div class="mb-3">
             <label for="price" class="form-label">Price</label>
-            <input type="number" step="0.01" class="form-control" name="price" id="price" aria-describedby="helpId" placeholder="99.99" value="{{old('title', $comic->price)}}">
+            <input type="number" step="0.01" class="form-control" name="price" id="price" aria-describedby="helpId" placeholder="99.99" value="${{old('title', $comic->price)}}">
             <small id="priceHelper" class="form-text text-muted">Type the price here</small>
             @error('price')
                 <div class="alert alert-danger">{{ $message }}</div>

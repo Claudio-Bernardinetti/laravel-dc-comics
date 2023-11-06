@@ -2,11 +2,16 @@
 
 @section('content')
 
-
 <div id="comics_index">
   <div class="container">
     <div class="row">
       <a class="btn btn-primary" href="{{route('comics.create')}}">Add Comics</a>
+
+      @if (session('message'))
+          <div class="alert alert-success my-2">
+              {{ session('message') }}
+          </div>
+      @endif
       
       @forelse ($comics as $comic)
         <div class="card-body card_body col-12 col-md-6 col-lg-6 col-xl-4  flex-wrap border border-black m-3 ">

@@ -15,7 +15,7 @@
     <div class="text p-2">
         <strong class="text-muted">Description</strong>
         <p class="col-md-8 fs-4">{{$comic->description}}</p>
-        <div class="display-3">{{$comic->price}}</div>
+        <div class="display-3">${{$comic->price}}</div>
 
         <a class="btn btn-success mt-4" href="#" role="button">Buy Now</a>
         <a class="btn btn-primary mt-4" href="{{route('comics.index', $comic->id)}}" role="button">Go Back</a>
