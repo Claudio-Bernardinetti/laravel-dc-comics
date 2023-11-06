@@ -11,7 +11,7 @@
       @forelse ($comics as $comic)
         <div class="card-body card_body col-12 col-md-6 col-lg-6 col-xl-4  flex-wrap border border-black m-3 ">
             <div class="card-header card_header">
-                <img class="card-img-top" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                <img class="card-img-top" src="{{ strstr($comic->thumb, 'http') ? $comic->thumb : asset('storage/' . $comic->thumb) }}" alt="{{ $comic->title }}">
                 {{-- <p class="card-text">{{ $comic->description }}</p> --}}
             </div>
             <div class="card-text card_text p-2">

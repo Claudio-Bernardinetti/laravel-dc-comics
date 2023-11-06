@@ -7,7 +7,7 @@
 
     <h1 class="py-4">Edit Comic number: {{$comic->id}}</h1>
     
-    {{-- @include('partials.errors') --}}
+     {{-- @include('partials.errors')  --}}
 
     <form action="{{route('comics.update', $comic)}}" method="POST" enctype="multipart/form-data">
 

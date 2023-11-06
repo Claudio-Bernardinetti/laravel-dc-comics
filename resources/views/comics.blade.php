@@ -11,7 +11,7 @@
             <div class="col ">
                 <div class="card rounded-0">
                     <img class="card-img-top rounded-0" src="{{$comic->thumb}}" alt=""> 
-                    {{-- <img class="card-img-top" src="{{ asset('storage/' . $comic->thumb) }}" alt=""> --}}
+                    <img class="card-img-top" src="{{ asset('storage/' . $comic->thumb) }}" alt="">
                 </div>
                 <p class="text-white">{{$comic->series}}</p>    
             </div>

@@ -3,6 +3,7 @@
 @section('content')
 
 <img class="img-fluid img_jumbo" src="{{$comic->thumb}}" width="10%" alt="">
+<img class="img-fluid img_jumbo" src="{{ asset('storage/' . $comic->thumb) }}" width="10%" alt="{{ $comic->thumb }}">
 
 <div class="blue_line">
     
@@ -29,11 +30,13 @@
       <strong class="text-muted">ADVERTISEMENT</strong>
       <img src="{{ Vite::asset('resources/img/adv.jpg') }}" alt="">
     </div>
-    {{-- <img src="{{ asset('storage/' . $comic->thumb) }}" alt="{{ $comic->thumb }}"> --}}
+    
     </div>
     <div class="info d-flex">
         <div class="col-6">Talent
-            <div>{{ implode(', ', json_decode($comic->artists, true)) }}</div>
+            {{-- <div>{{ implode(', ', json_decode($comic->artists, true)) }}</div> --}}
+            {{-- <div>{{ implode(', ', array_values(json_decode($comic->artists, true))) }}</div> --}}
+
         </div>
         <div class="col-6">Specs
             <div>{{$comic->series}}</div>

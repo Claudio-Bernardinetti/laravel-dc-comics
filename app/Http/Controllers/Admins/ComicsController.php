@@ -34,12 +34,17 @@ class ComicsController extends Controller
      
      public function store(Request $request)
      {
+        $messages = [
+            'title' => 'Il titolo è obbligatorio.',
+            'price' => 'Il prezzo deve essere un numero.',
+        ];
+
         $val_data = $request->validate([
             'title' => 'required|min:3|max:50',
             'price' => 'nullable',
             'thumb' => 'nullable|image|max:600'
 
-        ]);
+        ], $messages);
          /* $data = $request->all(); */
  
          if ($request->has('thumb')) {

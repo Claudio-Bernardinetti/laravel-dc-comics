@@ -1,0 +1,1 @@
+<input ... class="@error('message') is-invalid @enderror">
