@@ -6,7 +6,7 @@
 {{-- <button type="submit" class="btn btn-primary">
     Save
 </button> --}}
-<div class="container">
+<div class="container my-2">
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -24,15 +24,21 @@
         <!-- // Attention to Cross site request forgery attacks -->
         @csrf
         <div class="mb-3">
-            <label for="name" class="form-label">title</label>
+            <label for="name" class="form-label">Title</label>
             <input type="text" class="form-control @error('title') is_invalid @enderror" name="title" id="title" aria-describedby="helpId" placeholder="dcComics" maxlength="100" require value="{{old('title')}}">
-            <small id="nameHelper" class="form-text text-muted">Type the name here</small>
+            <small id="titleHelper" class="form-text text-muted">Type the Title here</small>
+            @error('title')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror         
         </div>
 
         <div class="mb-3">
             <label for="price" class="form-label">Price</label>
-            <input type="number" step="0.01" class="form-control @error('price') is_invalid @enderror" name="price" id="price" aria-describedby="helpId" placeholder="99.99" require value="{{old('price')}}>
+            <input type="number" step="0.01" class="form-control @error('price') is_invalid @enderror" name="price" id="price" aria-describedby="helpId" placeholder="99.99" require value="{{old('price')}}">
             <small id="priceHelper" class="form-text text-muted">Type the price here</small>
+            @error('price')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror  
 
         </div>
 
