@@ -102,7 +102,7 @@ class ComicsController extends Controller
             $val_data['thumb'] = $file_path;
         }
 
-        /* dd($file_path); */
+        //dd($file_path);
         //dd($val_data);
 
         $comic->update($val_data);

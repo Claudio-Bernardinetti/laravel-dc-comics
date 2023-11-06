@@ -31,9 +31,11 @@
                   <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="button " class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal_{{$comic->id}}">
+                  
+                    <button type="button" class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal_{{$comic->id}}">
                       Delete
                     </button>
+                  
                     <div class="modal fade" id="exampleModal_{{$comic->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -53,7 +55,6 @@
                         </div>
                       </div>
                     </div>
-  
                   </form>
                 </div>
                 
